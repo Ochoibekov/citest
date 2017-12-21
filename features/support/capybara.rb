@@ -4,7 +4,7 @@ require 'capybara/dsl'
 require 'selenium-cucumber'
 require 'selenium/webdriver'
 
-Selenium::WebDriver::Chrome.driver_path = <"~/Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome">
+
 Capybara.register_driver :chrome do |app|
 	chrome_options = {
     browser: :chrome,
