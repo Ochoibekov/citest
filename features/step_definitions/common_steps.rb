@@ -2,7 +2,6 @@ When(/^я перехожу на "([^"]*)"$/) do |arg|
   case
     when arg == 'главная страница'
       visit '/'
-      sleep(10)
   end
 end
 
