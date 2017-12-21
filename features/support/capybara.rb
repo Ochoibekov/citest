@@ -4,15 +4,14 @@ require 'capybara/dsl'
 require 'selenium-cucumber'
 require 'selenium/webdriver'
 
-# driver = :selenium
-
-# Capybara.default_driver = driver
-# # Capybara.app_host = 'http://cp.kwikichat.com/'
-# Capybara.app_host = 'http://localhost:9292/'
-# Capybara.page.driver.browser.manage.window.resize_to(1440, 900)
 
 Capybara.register_driver :chrome do |app|
-  Capybara::Selenium::Driver.new(app, :browser => :chrome)
+	chrome_options = {
+    browser: :chrome,
+    options: ::Selenium::WebDriver::Chrome::Options.new()
+  }
+  chrome_options[:options].args << 'headless'
+  Capybara::Selenium::Driver.new(app, chrome_options)
 end
 
 Capybara.javascript_driver = :chrome
