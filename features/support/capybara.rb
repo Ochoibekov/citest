@@ -11,7 +11,7 @@ Capybara.register_driver :chrome do |app|
     browser: :chrome,
     options: ::Selenium::WebDriver::Chrome::Options.new()
   }
-  chrome_options[:options].args << 'headless'
+  # chrome_options[:options].args << 'headless'
   Capybara::Selenium::Driver.new(app, chrome_options)
 end
 
